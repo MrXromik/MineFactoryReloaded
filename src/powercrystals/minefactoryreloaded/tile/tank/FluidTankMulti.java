@@ -103,11 +103,13 @@ public class FluidTankMulti implements IFluidTank {
 		int f = 0;
 		if (resource != null && (fluid == null || fluid.isFluidEqual(resource))) {
 			int i = index;
+			if(i > 0){
 			while (i < length) {
 				f += tanks[i].fill(resource, doFill);
 				if (f >= resource.amount)
 					break;
 				++i;
+			}
 			}
 			if (i == length)
 				 --i;
